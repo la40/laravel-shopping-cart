@@ -110,6 +110,8 @@ Cart::item(1)->model;
 Cart::item(3);
 Cart::item(4);
 
+//models are not loaded again
+
 //models are lazy loaded here again
 Cart::item(4)->model;
 ```
@@ -272,7 +274,7 @@ Cart::total();
 - id : int
 - quantity : int
 - attributes : ItemAttributesCollection
-- conditions : Collection with ItemConditions
+- conditions : LaravelCollection with ItemConditions
 - model : Illuminate\Database\Eloquent\Model
 
 ##### Set quantity
