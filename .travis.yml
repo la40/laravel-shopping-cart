@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 7.0
+
+before_install:
+  - composer self-update
+  - composer create-project --prefer-dist laravel/laravel laravel
+  - cd ./laravel
+  - composer config repositories.lachezargrigorov vcs https://github.com/lachezargrigorov/laravel-shopping-cart.git
+  - composer require "lachezargrigorov/laravel-shopping-cart:dev-master"
+  - cp ./vendor/lachezargrigorov/laravel-shopping-cart/tests/travis_cp/.env ./
+  - cp ./vendor/lachezargrigorov/laravel-shopping-cart/tests/travis_cp/Product.php ./app
+  - cp -rf ./vendor/lachezargrigorov/laravel-shopping-cart/tests/travis_cp/phpunit.xml ./vendor/lachezargrigorov/laravel-shopping-cart
+  - cd ./vendor/lachezargrigorov/laravel-shopping-cart
+
+script: "phpunit"

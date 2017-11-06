@@ -1,0 +1,63 @@
+{
+    "name": "Lachezargrigorov/cart",
+    "type": "library",
+    "description": "An easy to use shopping cart for Laravel applications.",
+    "keywords": [
+        "lachezargrigorov",
+        "laravel",
+        "cart",
+        "shopping cart"
+    ],
+    "homepage": "https://github.com/lachezargrigorov/laravel-shopping-cart",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lachezar Grigorov",
+            "email": "lachezar@grigorov.website",
+            "homepage": "http://grigorov.website",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/config": "^5.1",
+        "illuminate/support": "^5.1",
+        "illuminate/database": "^5.1",
+        "php" : "^5.6|^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^5.4",
+        "fzaninotto/faker": "^1.4",
+        "squizlabs/php_codesniffer": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lachezargrigorov\\Cart\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lachezargrigorov\\Cart\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Lachezargrigorov\\Cart\\CartServiceProvider"
+            ],
+            "aliases": {
+                "Cart": "Lachezargrigorov\\Cart\\Facades\\Cart"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
