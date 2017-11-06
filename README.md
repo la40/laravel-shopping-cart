@@ -10,7 +10,7 @@ An easy to use more advanced shopping cart for Laravel applications.
 
 ## Installation
 
-###Via Composer
+### Via Composer
 
 ``` bash
 $ composer require lachezargrigorov\laravel-shopping-cart
