@@ -228,7 +228,7 @@
          *
          * @param $itemId
          *
-         * @return ItemCollection or null
+         * @return Item
          */
 
         public function item(int $itemId)
@@ -249,7 +249,10 @@
         }
 
         /** Get or create a cart condition
+         *
          * @param string $name
+         *
+         * @return CartCondition
          */
 
         public function condition(string $name)
@@ -343,11 +346,11 @@
             return $this;
         }
 
-        /** Empty the cart
+        /** Empty the cart items
          * @return $this
          */
 
-        public function empty()
+        public function clear()
         {
             $this->models = new Collection;
             $this->session->put($this->sessionKeyCartItems, new Collection);
@@ -355,11 +358,11 @@
             return $this;
         }
 
-        /** Empty the conditions
+        /** Empty the cart conditions
          * @return $this
          */
 
-        public function emptyConditions()
+        public function clearConditions()
         {
             $this->session->put($this->sessionKeyCartConditions,new Collection);
 

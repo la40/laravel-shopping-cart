@@ -153,11 +153,11 @@ Cart::count();
 Cart::remove($ids);
 ```
 
-##### Empty the cart (remove all items)
+##### Remove all cart items
 - return : Cart
  
 ``` php
-Cart::empty();
+Cart::clear();
 ```
 
 ##### Is empty for items
@@ -246,11 +246,11 @@ Cart::countConditions();
 Cart::removeConditions($names);
 ```
 
-##### Empty the conditions (remove all conditions)
+##### Remove all cart conditions
 - return : Cart
  
 ``` php
-Cart::emptyConditions();
+Cart::clearConditions();
 ```
 
 ##### Is empty for conditions
