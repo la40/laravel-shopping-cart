@@ -198,7 +198,9 @@
                 return [];
             }
 
-            return $this->itemClass()::whereIn("id", $keys)->get();
+            $itemClass = $this->itemClass();
+
+            return $itemClass::whereIn("id", $keys)->get();
         }
 
         /** Get all items in cart
