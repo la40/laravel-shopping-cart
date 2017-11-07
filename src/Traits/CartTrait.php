@@ -26,7 +26,7 @@ trait CartTrait
 
 
     /** Set condition or conditions as array
-     * @param array $condition - as array [condition] or multi dimensional array with conditions [[condition],[condition]] (already existing conditions will be merged with currents)
+     * @param array $condition - as array [condition] or multidimensional array with conditions [[condition],[condition]] (already existing conditions will be merged with currents)
      *
      * @return $this
      */

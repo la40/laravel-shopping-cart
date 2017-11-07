@@ -186,6 +186,35 @@ This method add or get an CartCondition if exist.
 Cart::condition($name);
 ```
 
+#### Add or set CartConditions as array
+This will rewrite the existing conditions.
+
+- return : Cart
+
+``` php
+
+    Cart::setConditionAsArray([
+               "name"  => "all sale1",
+               "type"  => "all sale",
+               "value" => "-10%",
+           ]);
+
+    //or as multidimensional array
+
+  Cart::setConditionAsArray([
+            [
+                "name"  => "all sale1",
+                "type"  => "all sale",
+                "value" => "-10%",
+            ],
+            [
+                "name"  => "all sale2",
+                "type"  => "all sale",
+                "value" => "+1",
+            ],
+        ]);
+```
+
 ##### Get conditions
 
 - return : LaravelCollection with CartConditions
@@ -325,8 +354,6 @@ Cart::item($id)->attributes->get("size");
 Cart::item($id)->attributes->each(function($value, $key){
     ...
 });
-
-
 ```
 
 ##### Empty attributes (delete all attributes)
@@ -342,6 +369,35 @@ Cart::item($id)->emptyAttributes();
 
 ``` php
 Cart::item($id)->condition($name); 
+```
+
+#### Add or set ItemConditions as array
+This will rewrite the existing conditions.
+
+- return : Item
+
+``` php
+
+    Cart::item(1)->setConditionAsArray([
+               "name"  => "item sale1",
+               "type"  => "item sale",
+               "value" => "-10%",
+           ]);
+
+    //or as multidimensional array
+
+  Cart::item(1)->setConditionAsArray([
+            [
+                "name"  => "item sale1",
+                "type"  => "item sale",
+                "value" => "-10%",
+            ],
+            [
+                "name"  => "item sale2",
+                "type"  => "item sale",
+                "value" => "+1",
+            ],
+        ]);
 ```
 
 ##### Get conditions

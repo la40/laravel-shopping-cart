@@ -150,8 +150,6 @@ class CartTest extends TestCase
 
     public function testCartSubtotalAndTotal()
     {
-        $this->cart->useItemModels($this->mockItems());
-
         $this->cart->item(1)->set([
             "quantity" => 1,
             "attributes" => [
@@ -172,6 +170,8 @@ class CartTest extends TestCase
         ]);
 
         $this->cart->item(2)->quantity(1);
+
+        $this->cart->useItemModels($this->mockItems());
 
         // 5.24 + 10.48 = 15.72
         $this->assertEquals(15.72, $this->cart->subtotalWithoutConditions());
