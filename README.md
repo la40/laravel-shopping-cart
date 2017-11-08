@@ -157,7 +157,7 @@ Cart::remove($ids);
 - return : Cart
  
 ``` php
-Cart::clear();
+Cart::empty();
 ```
 
 ##### Is empty for items
@@ -250,7 +250,7 @@ Cart::removeConditions($names);
 - return : Cart
  
 ``` php
-Cart::clearConditions();
+Cart::emptyConditions();
 ```
 
 ##### Is empty for conditions

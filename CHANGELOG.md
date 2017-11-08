@@ -2,12 +2,7 @@
 
 All notable changes to `laravel-shopping-cart` will be documented in this file.
 
-# v1.0.1 (2017-11-07)
-
-### Changed
-- Cart::empty() -> Cart::clear()
-- Cart::emptyConditions() -> Cart::clearConditions()
-- README.md - Changed respectively.
+# v1.0.1 (2017-11-08)
 
 ### Added
 - README.md - Description for setConditionAsArray added for Cart and Item.

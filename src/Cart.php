@@ -198,9 +198,7 @@
                 return [];
             }
 
-            $itemClass = $this->itemClass();
-
-            return $itemClass::whereIn("id", $keys)->get();
+            return $this->itemClass()::whereIn("id", $keys)->get();
         }
 
         /** Get all items in cart
@@ -350,7 +348,7 @@
          * @return $this
          */
 
-        public function clear()
+        public function empty()
         {
             $this->models = new Collection;
             $this->session->put($this->sessionKeyCartItems, new Collection);
@@ -362,7 +360,7 @@
          * @return $this
          */
 
-        public function clearConditions()
+        public function emptyConditions()
         {
             $this->session->put($this->sessionKeyCartConditions,new Collection);
 
