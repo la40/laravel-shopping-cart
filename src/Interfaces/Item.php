@@ -17,8 +17,10 @@ interface Item
 
     //public function isOrderable();
 
-    /** Return the price
-     * @return mixed
+    /** Return the item (product) price
+     *  which will be used from the cart
+     *
+     * @return double
      */
     public function getCartPrice();
 }

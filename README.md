@@ -30,13 +30,14 @@ If you want to use the Cart facade, add this to the aliases array in app.php:
 'Cart' => \Lachezargrigorov\Cart\Facades\Cart::class,
 ```
 
-Implement the Item Interface in your item (product) model.
+Implement the Item interface in your product model. 
+The Cart and Item uses ***getCartPrice*** method to calculate the totals.
 
 ```php
 use Illuminate\Database\Eloquent\Model;
 use Lachezargrigorov\Cart\Iterfaces\Item;
 
-class Product extends Model implements Item{}
+class Product extends Model implements Item {}
 ```
 
 Publish the package config to your local config with the publish command and configure them:
