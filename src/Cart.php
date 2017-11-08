@@ -74,7 +74,7 @@
         {
             //construct
             $this->sessionKeyCartItems      = $this->config("session_key")."_cart_items";
-            $this->sessionKeyCartConditions = $this->config("session_key")."cart_conditions";
+            $this->sessionKeyCartConditions = $this->config("session_key")."_cart_conditions";
             $this->instanceName             = $this->config("instance_name");
             $this->session                  = app("session");
             $this->events                   = app("events");

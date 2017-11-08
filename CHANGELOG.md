@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-shopping-cart` will be documented in this file.
 
+# v1.0.2 (2017-11-08)
+
+### Fixed
+- session key for cart conditions - "cart_conditions" -> "_cart_conditions"
+- phpunit
+
 # v1.0.1 (2017-11-08)
 
 ### Added

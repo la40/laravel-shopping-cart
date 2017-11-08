@@ -80,11 +80,11 @@ class CartTest extends TestCase
         $this->assertEquals(1, $this->cart->count());
     }
 
-    public function testClear()
+    public function testEmpty()
     {
         $this->cart->item(1)->quantity(1);
         $this->cart->item(2)->quantity(1);
-        $this->cart->clear();
+        $this->cart->empty();
         $this->assertEquals(0, $this->cart->count());
     }
 
@@ -97,11 +97,11 @@ class CartTest extends TestCase
         $this->assertEquals(1, $this->cart->countConditions());
     }
 
-    public function testClearConditions()
+    public function testEmptyConditions()
     {
         $this->cart->condition("whole sale1");
         $this->cart->condition("whole sale2");
-        $this->cart->clearConditions();
+        $this->cart->emptyConditions();
         $this->assertEquals(0, $this->cart->countConditions());
     }
 
@@ -109,7 +109,7 @@ class CartTest extends TestCase
     {
         $this->cart->item(1)->quantity(1);
         $this->assertFalse($this->cart->isEmpty(), 'Cart should not be empty');
-        $this->cart->clear();
+        $this->cart->empty();
         $this->assertTrue($this->cart->isEmpty(), 'Cart should be empty');
     }
 
