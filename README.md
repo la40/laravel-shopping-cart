@@ -13,7 +13,7 @@ An easy to use more advanced shopping cart for Laravel applications.
 ### Via Composer
 
 ``` bash
-$ composer require lachezargrigorov\laravel-shopping-cart
+$ composer require lachezargrigorov/laravel-shopping-cart
 ```
 
 Laravel 5.5 and above uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider and Facade to the array in config/app.php
