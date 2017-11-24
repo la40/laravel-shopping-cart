@@ -175,6 +175,14 @@ Cart::isEmpty();
 Cart::keys();
 ```
 
+#####  Empty the item models
+This will case the cart to reload the models on next model call.
+- return : Cart
+
+``` php
+Cart::emptyModels();
+```
+
 #### CartCondition
 
 ##### Add or get CartCondition

@@ -56,12 +56,6 @@
 
         protected $models;
 
-        /** Indicate the lazy model loading
-         *
-         * @var bool
-         */
-
-        public $modelsLoaded;
 
         /**
          * @var Lachezargrigorov\Cart\Closures
@@ -81,8 +75,7 @@
 
             //init
             $this->closures     = Closures::getInstance();
-            $this->models       = new Collection;
-            $this->modelsLoaded = false;
+            $this->models       = null;
 
             if(!$this->session->has($this->sessionKeyCartItems))
             {
@@ -142,10 +135,20 @@
          * @return $this
          */
 
-        public function useItemModels(Collection $models)
+        public function useModels(Collection $models)
         {
             $this->models = collect($models->getDictionary());
-            $this->modelsLoaded = true;
+            return $this;
+        }
+
+        /**
+         * Empty the item models.
+         * This will case the cart to reload the models on next model call.
+         */
+
+        public function emptyModels()
+        {
+            $this->models = null;
             return $this;
         }
 
@@ -171,7 +174,7 @@
         protected function loadModels()
         {
 
-            if($this->modelsLoaded)
+            if($this->models)
             {
                 return;
             }
@@ -186,7 +189,6 @@
                 $this->models = collect();
             }
 
-            $this->modelsLoaded = true;
         }
 
         protected function getModelsFromDB()
@@ -240,7 +242,7 @@
                 $this->items()->put($itemId, $item);
 
                 //reload models on next model call
-                $this->modelsLoaded = false;
+                $this->unloadModels();
             }
 
             return $item;
@@ -350,7 +352,7 @@
 
         public function empty()
         {
-            $this->models = new Collection;
+            $this->models = null;
             $this->session->put($this->sessionKeyCartItems, new Collection);
 
             return $this;
@@ -462,15 +464,6 @@
             }
 
             return Helpers::numberFormat($subtotal);
-        }
-
-        /** Load model for single item in cart
-         * @param $id
-         */
-
-        protected function loadItemModel(int $itemId)
-        {
-            $this->models->put($itemId, $this->itemClass()->findOrFail($itemId));
         }
 
         /** Get item class

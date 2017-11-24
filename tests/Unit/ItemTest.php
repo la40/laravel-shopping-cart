@@ -14,14 +14,14 @@ class ItemTest extends TestCase
     public function testItemModel()
     {
         $this->cart->item(1)->quantity(1);
-        $this->cart->useItemModels($this->mockItems());
+        $this->cart->useModels($this->mockItems());
         $this->assertEquals(1, $this->cart->item(1)->model->id);
     }
 
     public function testItemModelInterface()
     {
         $this->cart->item(1)->quantity(1);
-        $this->cart->useItemModels($this->mockItems());
+        $this->cart->useModels($this->mockItems());
         $this->assertEquals(5.24, $this->cart->item(1)->model->getCartPrice());
     }
 
@@ -196,7 +196,7 @@ class ItemTest extends TestCase
     {
         $this->cart->item(1)->quantity(2)->condition("whole sale")->type("all sale")->value("-2");
 
-        $this->cart->useItemModels($this->mockItems(1));
+        $this->cart->useModels($this->mockItems(1));
 
         $this->assertEquals(5.24,$this->cart->item(1)->priceWithoutConditions());
         // 5.24 * 2 = 10.48

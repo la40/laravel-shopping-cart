@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-shopping-cart` will be documented in this file.
 
+# v1.1.1 (2017-11-08)
+
+### Added
+- Cart::emptyModels() added
+
 # v1.0.2 (2017-11-08)
 
 ### Fixed
