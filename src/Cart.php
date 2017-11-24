@@ -242,7 +242,7 @@
                 $this->items()->put($itemId, $item);
 
                 //reload models on next model call
-                $this->unloadModels();
+                $this->emptyModels();
             }
 
             return $item;
